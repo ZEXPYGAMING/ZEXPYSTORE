@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ZEXPY STORE × ZENO AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>ZEXPY STORE</h1>
+  <p>Psychology-powered growth & support platform</p>
+  <span class="tag">ZENO AI — powered by ZEXPY</span>
+
+  <div class="themes">
+    <button onclick="setTheme('dark')">Dark</button>
+    <button onclick="setTheme('blue')">Blue</button>
+    <button onclick="setTheme('light')">Light</button>
+  </div>
+</header>
+
+<section class="about">
+  <h2>Why ZEXPY?</h2>
+  <p>
+    ZEXPY STORE helps people, creators, authors, and brands grow
+    through psychology-inspired AI guidance — empathy first, clarity next.
+  </p>
+</section>
+
+<section class="ai">
+  <h2>ZENO AI — Psychology Companion</h2>
+
+  <div class="chat-box" id="chatBox">
+    <div class="bot">
+      Hi, I’m <b>ZENO</b>.<br>
+      I’m a psychology-inspired AI powered by ZEXPY.<br><br>
+      I don’t judge. I don’t rush. I don’t share your data.<br>
+      You’re safe here.<br><br>
+      What’s on your mind today?
+    </div>
+  </div>
+
+  <div class="input-area">
+    <input id="userInput" placeholder="Type your thoughts here..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <div class="modes">
+    <button onclick="setMode('support')">Support</button>
+    <button onclick="setMode('growth')">Growth</button>
+    <button onclick="setMode('clarity')">Clarity</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 ZEXPY • Privacy-First • Ethical AI • No Data Sharing</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
