@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZEXPY STORE | Coming Soon</title>  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #000;
+    }
+
+    canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      filter: blur(2px);
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 2;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .top-title {
+      margin-top: 10px;
+      font-size: 42px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #9fdcff, #ffffff, #9fdcff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow:
+        0 0 12px rgba(180,220,255,0.6),
+        0 0 30px rgba(120,200,255,0.4);
+    }
+
+    .center-text {
+      font-size: 22px;
+      letter-spacing: 3px;
+      font-weight: 600;
+      color: #ffffff;
+      text-shadow:
+        0 0 12px rgba(0,200,255,0.9),
+        0 0 28px rgba(0,150,255,0.6);
+    }
+
+    footer {
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      color: rgba(255,255,255,0.7);
+      text-shadow: 0 0 10px rgba(0,150,255,0.4);
+    }
+  </style></head>
+<body><canvas id="bg"></canvas>
+
+<div class="overlay">
+  <div class="top-title">ZEXPY STORE</div>  <div class="center-text">STORE WILL BE AVAILABLE SOON</div>  <footer>© 2026 ZEXPY STORE. All Rights Reserved.</footer>
+</div><script>
+  const canvas = document.getElementById('bg');
+  const ctx = canvas.getContext('2d');
+
+  let dpr;
+  function resize() {
+    dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const particles = [];
+  const COUNT = 150;
+
+  for (let i = 0; i < COUNT; i++) {
+    particles.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      z: Math.random() * 2 + 0.5,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      r: Math.random() * 2 + 1.2
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (const p of particles) {
+      p.x += p.vx * p.z;
+      p.y += p.vy * p.z;
+
+      if (p.x < 0) p.x = window.innerWidth;
+      if (p.x > window.innerWidth) p.x = 0;
+      if (p.y < 0) p.y = window.innerHeight;
+      if (p.y > window.innerHeight) p.y = 0;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * p.z, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(180,220,255,0.85)';
+      ctx.fill();
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script></body>
+</html>
